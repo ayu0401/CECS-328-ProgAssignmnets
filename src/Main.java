@@ -1,13 +1,13 @@
 import java.lang.reflect.Array;
-import java.util.SortedMap;
+import java.util.*;
 
 public class Main {
 
 
 
     public static void SortedDescendingInit(int[] array){
-        for (int i = 0; i < 1000; i++) {
-            array[i] = 999 - i;
+        for (int i = 0; i < array.length; i++) {
+            array[i] = (array.length - 1) - i;
         }
     }
 
@@ -42,14 +42,14 @@ public class Main {
 
 
 
-//The merge sort algorithm kinda easy, recurrsive
+//The merge sort algorithm kinda easy, recursive
     public static void merge(int[] arr, int[] lft, int[] rht){
         //Initializing the ijk for while loops
         int i = 0; int j = 0; int k = 0;
         int lenL = lft.length; int lenR = rht.length;
 
 
-        /*here it will put the sorted elements into the arr[] until one side prevails because say lft.length is 1 and
+        /* here it will put the sorted elements into the arr[] until one side prevails because say lft.length is 1 and
         rht.length is 2. And the lft element is smaller than the rht. Result --> i=lenL there fore we need to jump to
         the bottom and do while(j < lenR) to finish off whatever we need to store in the arr[]. vice versa.
          */
@@ -112,9 +112,14 @@ public class Main {
     public static void main(String[] args) {
         int[] a = new int[1000];
         int[] b = new int[1000];
+        //SortedDescendingInit(a);
+
+
+        long start = System.currentTimeMillis();
         SortedDescendingInit(a);
-
-
+        System.out.println(Arrays.toString(a));
+        long end = System.currentTimeMillis();
+        System.out.println("Execution time: " + (end-start) + " ms");
 
     }
 }
