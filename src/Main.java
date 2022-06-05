@@ -154,16 +154,28 @@ public class Main {
 
     public static void main(String[] args) {
 
+        /**
+         * Test Case 1
+         */
+        int[] a = new int[1000];
+
+        /**
+         * Test Case 2
+         */
+        int[] b = new int[1000];
+
+        /**
+         * Test Case 3 & 4
+         */
         Random randNum = new Random();
 
-        int[] a = new int[1000];
-        for(int i = 0; i < a.length; i++){
-            a[i] = randNum.nextInt(1000);
+        int[] testCase3 = new int[1000];
+        for(int i = 0; i < testCase3.length; i++){
+            testCase3[i] = randNum.nextInt(1000);
         }
-
-        int[] b = new int[10000];
-        for(int i = 0; i < b.length; i++){
-            b[i] = randNum.nextInt(1000);
+        int[] testCase4 = new int[10000];
+        for(int i = 0; i < testCase4.length; i++){
+            testCase4[i] = randNum.nextInt(10000);
         }
         //SortedDescendingInit(a);
         //SortedAscendingInit(b);
@@ -233,16 +245,16 @@ public class Main {
         System.out.println("Bubble Sort Ascending Execution time: " + (end2-start2) + " ms");
 
         long start3 = System.currentTimeMillis();
-        //BubbleSort(c);
-        //System.out.println(Arrays.toString(b));
+        BubbleSort(testCase3);
+        //System.out.println(Arrays.toString(testCase3));
         long end3 = System.currentTimeMillis();
         System.out.println("Bubble Sort 1000 Random Elements Execution time: " + (end3-start3) + " ms");
 
-//        long start4 = System.currentTimeMillis();
-//        BubbleSort(d);
-//        System.out.println(Arrays.toString(b));
-//        long end4 = System.currentTimeMillis();
-//        System.out.println("Execution time: " + (end4-start4) + " ms");
+        long start4 = System.currentTimeMillis();
+        BubbleSort(testCase4);
+        //System.out.println(Arrays.toString(testCase4));
+        long end4 = System.currentTimeMillis();
+        System.out.println("Bubble Sort 10000 Random Elements Execution time: " + (end4-start4) + " ms");
     }
 }
 
