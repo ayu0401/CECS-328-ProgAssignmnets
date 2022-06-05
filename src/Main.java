@@ -229,7 +229,9 @@ public class Main {
 //                370, 41, 572, 499, 304, 176, 10, 304, 472, 865, 855, 244, 647, 948, 479, 150, 813, 866, 949, 353, 154,
 //                376, 476, 358, 239, 339, 719, 732, 840, 32, 977};
 
-
+        /**
+        * Start of Bubble Sort
+        */
         long start = System.currentTimeMillis();
         SortedDescendingInit(a);
         BubbleSort(a);
@@ -255,6 +257,9 @@ public class Main {
         //System.out.println(Arrays.toString(testCase4));
         long end4 = System.currentTimeMillis();
         System.out.println("Bubble Sort 10000 Random Elements Execution time: " + (end4-start4) + " ms");
+        /**
+         * End of Bubble Sort
+         */
     }
 }
 
