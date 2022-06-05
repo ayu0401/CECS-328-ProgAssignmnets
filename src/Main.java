@@ -109,9 +109,62 @@ public class Main {
     }
 
 
+
+
+
+
+
+   //   p -> starting index
+   //   r -> ending index
+   //   A -> the [] array
+    private static void QuickSort(int[] A, int p, int r){
+        if (p < r){
+
+            // q will be the partitioning index
+            int q = Partition(A, p, r);
+            QuickSort(A, p, q-1);
+            QuickSort(A, q+1, r);
+
+        }
+    }
+
+    //this will be used within the partition method
+    public static void swap(int[] array, int i, int j){
+        int temp = array[i];
+        array[i] = array[j];
+        array[j] = array[temp];
+    }
+
+    private static int Partition(int[] A, int p, int r){
+        int pivot = A[r];
+
+        //the index that starts on the very beginning
+        int i = (p -1);
+
+        for (int j = p; j<= r - 1; j++){
+            if (A[j] < pivot){
+                i++;
+                swap(A,i,j);
+            }
+        }
+        swap(A, i + 1, r);
+        return(i+1);
+
+    }
+
+
+
+
+
+
+
+
     public static void main(String[] args) {
         int[] a = new int[1000];
         int[] b = new int[1000];
+        int[] c = new int[10000];
+
+
         //SortedDescendingInit(a);
 
 
