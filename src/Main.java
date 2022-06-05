@@ -320,7 +320,32 @@ public class Main {
         /**
          * Merge Sort
          */
-        
+        long start13 = System.currentTimeMillis();
+        SortedDescendingInit(a);
+        MergeSort(a);
+        //System.out.println(Arrays.toString(a));
+        long end13 = System.currentTimeMillis();
+        System.out.println("Insertion Sort Descending Execution time: " + (end13-start13) + " ms");
+
+        long start14 = System.currentTimeMillis();
+        SortedAscendingInit(b);
+        MergeSort(b);
+        //System.out.println(Arrays.toString(b));
+        long end14 = System.currentTimeMillis();
+        System.out.println("Bubble Sort Ascending Execution time: " + (end14-start14) + " ms");
+
+        long start15 = System.currentTimeMillis();
+        MergeSort(testCase3);
+        //System.out.println(Arrays.toString(testCase3));
+        long end15 = System.currentTimeMillis();
+        System.out.println("Bubble Sort 1000 Random Elements Execution time: " + (end15-start15) + " ms");
+
+        long start16 = System.currentTimeMillis();
+        MergeSort(testCase4);
+        //System.out.println(Arrays.toString(testCase4));
+        long end16 = System.currentTimeMillis();
+        System.out.println("Bubble Sort 10000 Random Elements Execution time: " + (end16-start16) + " ms");
+        System.out.println();
 
     }
 }
