@@ -272,19 +272,19 @@ public class Main {
         InsertionSort(b);
         //System.out.println(Arrays.toString(b));
         long end6 = System.currentTimeMillis();
-        System.out.println("Bubble Sort Ascending Execution time: " + (end6-start6) + " ms");
+        System.out.println("Insertion Sort Ascending Execution time: " + (end6-start6) + " ms");
 
         long start7 = System.currentTimeMillis();
         InsertionSort(testCase3);
         //System.out.println(Arrays.toString(testCase3));
         long end7 = System.currentTimeMillis();
-        System.out.println("Bubble Sort 1000 Random Elements Execution time: " + (end7-start7) + " ms");
+        System.out.println("Insertion Sort 1000 Random Elements Execution time: " + (end7-start7) + " ms");
 
         long start8 = System.currentTimeMillis();
         InsertionSort(testCase4);
         //System.out.println(Arrays.toString(testCase4));
         long end8 = System.currentTimeMillis();
-        System.out.println("Bubble Sort 10000 Random Elements Execution time: " + (end8-start8) + " ms");
+        System.out.println("Insertion Sort 10000 Random Elements Execution time: " + (end8-start8) + " ms");
         System.out.println();
 
         /**
@@ -295,26 +295,26 @@ public class Main {
         QuickSort(a);
         //System.out.println(Arrays.toString(a));
         long end9 = System.currentTimeMillis();
-        System.out.println("Insertion Sort Descending Execution time: " + (end9-start9) + " ms");
+        System.out.println("Quick Sort Descending Execution time: " + (end9-start9) + " ms");
 
         long start10 = System.currentTimeMillis();
         SortedAscendingInit(b);
         QuickSort(b);
         //System.out.println(Arrays.toString(b));
         long end10 = System.currentTimeMillis();
-        System.out.println("Bubble Sort Ascending Execution time: " + (end10-start10) + " ms");
+        System.out.println("Quick Sort Ascending Execution time: " + (end10-start10) + " ms");
 
         long start11 = System.currentTimeMillis();
         QuickSort(testCase3);
         //System.out.println(Arrays.toString(testCase3));
         long end11 = System.currentTimeMillis();
-        System.out.println("Bubble Sort 1000 Random Elements Execution time: " + (end11-start11) + " ms");
+        System.out.println("Quick Sort 1000 Random Elements Execution time: " + (end11-start11) + " ms");
 
         long start12 = System.currentTimeMillis();
         QuickSort(testCase4);
         //System.out.println(Arrays.toString(testCase4));
         long end12 = System.currentTimeMillis();
-        System.out.println("Bubble Sort 10000 Random Elements Execution time: " + (end12-start12) + " ms");
+        System.out.println("Quick Sort 10000 Random Elements Execution time: " + (end12-start12) + " ms");
         System.out.println();
 
         /**
@@ -325,26 +325,26 @@ public class Main {
         MergeSort(a);
         //System.out.println(Arrays.toString(a));
         long end13 = System.currentTimeMillis();
-        System.out.println("Insertion Sort Descending Execution time: " + (end13-start13) + " ms");
+        System.out.println("Merge Sort Descending Execution time: " + (end13-start13) + " ms");
 
         long start14 = System.currentTimeMillis();
         SortedAscendingInit(b);
         MergeSort(b);
         //System.out.println(Arrays.toString(b));
         long end14 = System.currentTimeMillis();
-        System.out.println("Bubble Sort Ascending Execution time: " + (end14-start14) + " ms");
+        System.out.println("Merge Sort Ascending Execution time: " + (end14-start14) + " ms");
 
         long start15 = System.currentTimeMillis();
         MergeSort(testCase3);
         //System.out.println(Arrays.toString(testCase3));
         long end15 = System.currentTimeMillis();
-        System.out.println("Bubble Sort 1000 Random Elements Execution time: " + (end15-start15) + " ms");
+        System.out.println("Merge Sort 1000 Random Elements Execution time: " + (end15-start15) + " ms");
 
         long start16 = System.currentTimeMillis();
         MergeSort(testCase4);
         //System.out.println(Arrays.toString(testCase4));
         long end16 = System.currentTimeMillis();
-        System.out.println("Bubble Sort 10000 Random Elements Execution time: " + (end16-start16) + " ms");
+        System.out.println("Merge Sort 10000 Random Elements Execution time: " + (end16-start16) + " ms");
         System.out.println();
 
     }
