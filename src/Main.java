@@ -18,6 +18,13 @@ public class Main {
     }
 
 
+    public static void RandomArrayInit(int [] array){
+        Random rnum = new Random();
+        for (int i = 0; i < array.length; i++){
+            array[i] = rnum.nextInt(array.length);
+        }
+    }
+
 
 
 //The BubbleSort algorithm super easy stuff
@@ -161,18 +168,79 @@ public class Main {
 
     public static void main(String[] args) {
         int[] a = new int[1000];
-        int[] b = new int[1000];
-        int[] c = new int[10000];
+        int[] b = new int[10000];
 
-
-        //SortedDescendingInit(a);
-
-
-        long start = System.currentTimeMillis();
+        /*
+         * Test Case 1) Descending Sorted Array with 1000 elements
+         */
+        System.out.println("----Sorted Descending 1000 element execution time----");
         SortedDescendingInit(a);
-        System.out.println(Arrays.toString(a));
+        long start = System.currentTimeMillis();
+        BubbleSort(a);
         long end = System.currentTimeMillis();
-        System.out.println("Execution time: " + (end-start) + " ms");
+        System.out.println("Bubble Sort Execution time: " + (end-start) + " ms");
+
+        SortedDescendingInit(a);
+        start = System.currentTimeMillis();
+        MergeSort(a);
+        end = System.currentTimeMillis();
+        System.out.println("Merge Sort Execution time: " + (end - start) + " ms");
+
+        SortedDescendingInit(a);
+        start = System.currentTimeMillis();
+        QuickSort(a,0,a.length-1);
+        end = System.currentTimeMillis();
+        System.out.println("Quick Sort Execution time: " + (end - start) + " ms");
+
+
+        /*
+        Test Case 2) Ascending Sorted Array with 1000 elements
+         */
+
+        System.out.println("----Sorted Ascending 1000 elements execution time----");
+        SortedAscendingInit(a);
+        start = System.currentTimeMillis();
+        BubbleSort(a);
+        end = System.currentTimeMillis();
+        System.out.println("Bubble Sort Execution time: " + (end-start) + " ms");
+
+        SortedAscendingInit(a);
+        start = System.currentTimeMillis();
+        MergeSort(a);
+        end = System.currentTimeMillis();
+        System.out.println("Merge Sort Execution time: " + (end - start) + " ms");
+
+        SortedAscendingInit(a);
+        start = System.currentTimeMillis();
+        QuickSort(a,0,a.length-1);
+        end = System.currentTimeMillis();
+        System.out.println("Quick Sort Execution time: " + (end - start) + " ms");
+
+
+
+        /*
+        Test Case 3) Sort Random Array of 1000 elements
+         */
+        System.out.println("----Sort Execution Time of Random Array of 1000 elements");
+        RandomArrayInit(a);
+        start = System.currentTimeMillis();
+        BubbleSort(a);
+        end = System.currentTimeMillis();
+        System.out.println("Bubble Sort Execution time: " + (end-start) + " ms");
+
+        RandomArrayInit(a);
+        start = System.currentTimeMillis();
+        MergeSort(a);
+        end = System.currentTimeMillis();
+        System.out.println("Merge Sort Execution time: " + (end - start) + " ms");
+
+        RandomArrayInit(a);
+        start = System.currentTimeMillis();
+        QuickSort(a,0,a.length-1);
+        end = System.currentTimeMillis();
+        System.out.println("Quick Sort Execution time: " + (end - start) + " ms");
+
+
 
     }
 }
