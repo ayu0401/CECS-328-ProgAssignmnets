@@ -240,6 +240,27 @@ public class Main {
         end = System.currentTimeMillis();
         System.out.println("Quick Sort Execution time: " + (end - start) + " ms");
 
+        /*
+        Test Case 4) Sort Random Array of 10000 elements
+         */
+        System.out.println("----Sort Execution Time of Random Array of 10000 elements");
+        RandomArrayInit(b);
+        start = System.currentTimeMillis();
+        BubbleSort(b);
+        end = System.currentTimeMillis();
+        System.out.println("Bubble Sort Execution time: " + (end-start) + " ms");
+
+        RandomArrayInit(b);
+        start = System.currentTimeMillis();
+        MergeSort(b);
+        end = System.currentTimeMillis();
+        System.out.println("Merge Sort Execution time: " + (end - start) + " ms");
+
+        RandomArrayInit(b);
+        start = System.currentTimeMillis();
+        QuickSort(b,0,b.length-1);
+        end = System.currentTimeMillis();
+        System.out.println("Quick Sort Execution time: " + (end - start) + " ms");
 
 
     }
