@@ -162,6 +162,8 @@ public class Main {
     }
 
     //Insertion Sort
+    // A - array
+    // n - array size
     public static void InsertionSort(int[] A){
         int n = A.length;
 
