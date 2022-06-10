@@ -1,3 +1,5 @@
+//Aaron Yu, 018153614
+//Jacob Munoz, 018192133
 import java.lang.reflect.Array;
 import java.util.*;
 
@@ -159,6 +161,21 @@ public class Main {
 
     }
 
+    //Insertion Sort
+    public static void InsertionSort(int[] A){
+        int n = A.length;
+
+        for(int i = 2; i < n; i++){
+            int key = A[i];
+            int j = i - 1;
+
+            while(j >= 0 && key < A[j]){
+                A[j+1] = A[j];
+                j--;
+            }
+            A[j + 1] = key;
+        }
+    }
 
 
 
@@ -192,6 +209,12 @@ public class Main {
         end = System.currentTimeMillis();
         System.out.println("Quick Sort Execution time: " + (end - start) + " ms");
 
+        SortedDescendingInit(a);
+        start = System.currentTimeMillis();
+        InsertionSort(a);
+        end = System.currentTimeMillis();
+        System.out.println("Insertion Sort Execution time: " + (end - start) + " ms");
+
 
         /*
         Test Case 2) Ascending Sorted Array with 1000 elements
@@ -216,6 +239,11 @@ public class Main {
         end = System.currentTimeMillis();
         System.out.println("Quick Sort Execution time: " + (end - start) + " ms");
 
+        SortedAscendingInit(a);
+        start = System.currentTimeMillis();
+        InsertionSort(a);
+        end = System.currentTimeMillis();
+        System.out.println("Insertion Sort Execution time: " + (end - start) + " ms");
 
 
         /*
@@ -240,6 +268,12 @@ public class Main {
         end = System.currentTimeMillis();
         System.out.println("Quick Sort Execution time: " + (end - start) + " ms");
 
+        RandomArrayInit(a);
+        start = System.currentTimeMillis();
+        InsertionSort(a);
+        end = System.currentTimeMillis();
+        System.out.println("Insertion Sort Execution time: " + (end - start) + " ms");
+
         /*
         Test Case 4) Sort Random Array of 10000 elements
          */
@@ -261,6 +295,12 @@ public class Main {
         QuickSort(b,0,b.length-1);
         end = System.currentTimeMillis();
         System.out.println("Quick Sort Execution time: " + (end - start) + " ms");
+
+        RandomArrayInit(b);
+        start = System.currentTimeMillis();
+        InsertionSort(b);
+        end = System.currentTimeMillis();
+        System.out.println("Insertion Sort Execution time: " + (end - start) + " ms");
 
 
     }
