@@ -1,20 +1,22 @@
+import java.util.*;
+
 public class UserHeap {
 
 
-    //
-
-
-
-
-
-
-
-
-
-
-
-    public static void main(String[] args) {
+    public void insert(ArrayList<Integer> A,int num){
 
     }
+
+
+
+
+
+
+
+
+
+
+
+    
 }
 
