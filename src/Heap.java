@@ -19,30 +19,41 @@ public class Heap {
 //
 //    }
 
-    public static heapify(int[] array, int i){
+    public static void heapify(int[] array, int heapSize, int i){
         int largest = i;
         int left = 2 * i + 1;
         int right = 2 * i + 2;
 
-        if(left < heapSize[array] && array[left] > array[largest])
+        if(left < heapSize && array[left] > array[largest])
             largest = left;
-        else
-            largest = i;
-        else if (right < )
+
+        if (right < heapSize && array[right] > array[largest])
+            largest = right;
+
+        if(largest != i){
+            int swap = array[i];
+            array[i] = array[largest];
+            array[largest] = swap;
+
+            heapify(array, heapSize, largest);
+        }
 
     }
 
-    public static insert(int[] A, int num){
+    public static int insert(int[] A, int heapSize, int key){
 
+        heapSize += 1;
+        A[heapSize - 1] = key;
+        heapify(A, heapSize, heapSize - 1);
+        return heapSize;
     }
 
-    public static pop(int[] A, int num ){
+    public static int pop(int[] A, int num){
         int lastElement = A[num - 1];
         A[0] = lastElement;
         num -= 1;
         heapify(A, num, 0);
         return num;
-
     }
 
 
