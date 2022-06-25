@@ -1,4 +1,4 @@
-import java.util.Arrays;
+import java.util.*;
 public class Heap {
 
     private int[] array;
@@ -14,14 +14,31 @@ public class Heap {
 
 
 
-//Heap Functions
-//    public boolean isFull(){
-//
-//    }
 
-    public static heapify()
+// heap properties
+    public static int Parent(int i){
+        return i / 2;
+    }
 
-    public static insert(int[] A, int num){
+    public static int Left(int i){
+        return 2 * i;
+    }
+
+    public static int Right(int i){
+        return 2 * i + 1;
+    }
+
+
+
+//heap functions
+    public static void heapify(int[] A, int i){
+        int l = Left(i);
+        int r = Right(i);
+
+        if (l <= )
+    }
+
+    public static void insert(int[] A, int num){
 
     }
 
