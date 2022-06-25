@@ -47,7 +47,7 @@ public class Heap {
 
     }
 
-    public static void sort(int[] A){
+    public static void Heapsort(int[] A){
         int heap_size = A.length;
 
         for(int i = heap_size / 2 - 1; i >= 0; i--){
