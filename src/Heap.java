@@ -35,6 +35,7 @@ public class Heap {
         int l = Left(i);
         int r = Right(i);
 
+
         if (l <= )
     }
 
@@ -42,7 +43,25 @@ public class Heap {
 
     }
 
-    public static pop(int[] A, )
+    public static pop(int[] A, ){
+
+    }
+
+    public static void sort(int[] A{
+        int heap_size = A.length;
+
+        for(int i = heap_size / 2 - 1; i >= 0; i--){
+            heapify(A,i);
+        }
+
+        for(int i = heap_size - 1; i > 0;i--){
+            int temp = A[0];
+            A[0] = A[i];
+            A[i] = temp;
+
+            heapify(A,i);
+        }
+    }
 
 
 
