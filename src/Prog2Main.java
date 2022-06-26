@@ -53,6 +53,7 @@ public class Prog2Main {
                     System.out.println(Arrays.toString(hp.getArray()));
                     break;
                 case 5:
+
                 case 6:
                 case 7:
                     System.out.println("Exiting Program! Thanks for using Heap Creation!");
