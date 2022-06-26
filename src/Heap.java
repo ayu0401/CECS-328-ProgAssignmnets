@@ -12,7 +12,7 @@ public class Heap {
     }
     public Heap(int arraySize) {
         array = new int[arraySize];
-        heapSize = arraySize;
+        heapSize = array.length;
     }
 
 
@@ -26,11 +26,11 @@ public class Heap {
     }
 
     public static int Left(int i){
-        return 2 * i;
+        return 2 * i + 1;
     }
 
     public static int Right(int i){
-        return 2 * i + 1;
+        return 2 * i + 2;
     }
 
 
@@ -50,13 +50,13 @@ public class Heap {
         int r = Right(i);
         int smallest;
 
-        if (l >=  hp.heapSize && hp.getArray()[l] < hp.getArray()[l]){
+        if (l <= (hp.heapSize-1) && hp.getArray()[l] < hp.getArray()[i]){
              smallest = l;
         }
         else{
             smallest = i;
         }
-        if (r >= hp.heapSize && hp.getArray()[r] < hp.getArray()[r]){
+        if (r <= (hp.heapSize-1) && hp.getArray()[r] < hp.getArray()[smallest]){
             smallest = r;
         }
         if (smallest != i){
@@ -66,13 +66,17 @@ public class Heap {
     }
 
     public static void BuildHeap(Heap hp){
-        for (int i = hp.getHeapSize()/2; i>= 1; i--){
+        for (int i = (hp.heapSize/2)-1; i>=0; i--){
             heapify(hp, i);
         }
+
     }
 
-    public void insert(int num){
-
+    public static void insert(Heap hp, int key){
+        int heap_size = hp.getHeapSize();
+        heap_size += 1;
+        hp.getArray()[heap_size - 1] = key;
+        heapify(hp, heap_size - 1);
 
     }
 

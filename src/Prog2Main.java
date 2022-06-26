@@ -41,9 +41,11 @@ public class Prog2Main {
                     System.out.println(Arrays.toString(hp.getArray()));
                     break;
                 case 3:
-                    System.out.println("Enter one integer element you want to insert into Heap: ");
+                    System.out.println("Enter number you want to insert into Heap: ");
                     userNum = sc.nextInt();
                     assert hp != null;
+                    Heap.insert(hp, userNum);
+                    System.out.println(Arrays.toString(hp.getArray()));
                     break;
 
                 case 4:
