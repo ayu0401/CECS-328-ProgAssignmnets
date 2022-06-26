@@ -53,11 +53,12 @@ public class Heap {
         }
     }
 
-    public static int insert(Heap hp, int num, int key){
-        num += 1;
-        hp.getArray()[num - 1] = key;
-        heapify(hp, num - 1);
-        return num;
+    public static int insert(Heap hp, int key){
+        int heap_size = hp.getHeapSize();
+        heap_size += 1;
+        hp.getArray()[heap_size - 1] = key;
+        heapify(hp, heap_size - 1);
+        return heap_size;
 
 //        int heapSize = A.length;
 //        heapSize += 1;
