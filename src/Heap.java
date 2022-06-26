@@ -1,10 +1,6 @@
-
-import java.util.Arrays;
-
 //Aaron Yu, 018153614
 //Jacob Munoz, 018192133
 import java.util.*;
-
 public class Heap {
 
     private int[] array;
@@ -20,77 +16,88 @@ public class Heap {
 
 
 
-//Heap Functions
-//    public boolean isFull(){
-//
-//    }
 
-    public static void heapify(int[] array, int heapSize, int i){
-        int largest = i;
-        int left = 2 * i + 1;
-        int right = 2 * i + 2;
-
-        if(left < heapSize && array[left] > array[largest])
-            largest = left;
-
-        if (right < heapSize && array[right] > array[largest])
-            largest = right;
-
-        if(largest != i){
-            int swap = array[i];
-            array[i] = array[largest];
-            array[largest] = swap;
-
-
-            heapify(array, heapSize, largest);
-        }
-
-        if (l <= )
+    // heap properties
+    public static int Parent(int i){
+        return i / 2;
     }
 
-    public static int insert(int[] A, int num, int key){
+    public static int Left(int i){
+        return 2 * i;
+    }
+
+    public static int Right(int i){
+        return 2 * i + 1;
+    }
+
+
+
+    //heap functions
+    public static void heapify(Heap hp, int i){
+        int l = Left(i);
+        int r = Right(i);
+        int smallest;
+
+        if (l >=  hp.heapSize && hp.getArray()[l] < hp.getArray()[l]){
+            smallest = l;
+        }
+        else{
+            smallest = i;
+        }
+        if (r >= hp.heapSize && hp.getArray()[r] < hp.getArray()[r]){
+            smallest = r;
+        }
+        if (smallest != i){
+            swap(hp, i, smallest);
+            heapify(hp, smallest);
+        }
+    }
+
+    public static int insert(Heap hp, int num, int key){
+        num += 1;
+        hp.getArray()[num - 1] = key;
+        heapify(hp, num - 1);
+        return num;
+
 //        int heapSize = A.length;
 //        heapSize += 1;
 //        A[heapSize - 1] = num;
 //        heapify(A, num - 1);
+    }
 
-
-        num += 1;
-        A[num - 1] = key;
-        heapify(A, num - 1);
+    public static int pop(Heap hp, int num){
+        int lastElement = hp.getArray()[num - 1];
+        hp.getArray()[0] = lastElement;
+        num -= 1;
+        heapify(hp,num);
         return num;
     }
 
+    public static void Heapsort(Heap hp){
+        int heap_size = hp.getHeapSize();
 
-    public static int insert(int[] A, int heapSize, int key) {
+        for(int i = heap_size / 2 - 1; i >= 0; i--){
+            heapify(hp,i);
+        }
 
-        heapSize += 1;
-        A[heapSize - 1] = key;
-        heapify(A, heapSize, heapSize - 1);
-        return heapSize;
+        for(int i = heap_size - 1; i > 0;i--){
+            int temp = hp.getArray()[0];
+            hp.getArray()[0] = hp.getArray()[i];
+            hp.getArray()[i] = temp;
 
-        public static int pop ( int[] A, int num ){
-            int lastElement = A[num - 1];
-            A[0] = lastElement;
-            num -= 1;
-            heapify(A, num);
-            return num;
-
+            heapify(hp,i);
         }
     }
 
-    public static int pop(int[] A, int num){
-        int lastElement = A[num - 1];
-        A[0] = lastElement;
-        num -= 1;
-        heapify(A, num, 0);
-        return num;
+    public static void swap(Heap hp, int i, int j){
+        int temp = hp.getArray()[i];
+        hp.getArray()[i] = hp.getArray()[j];
+        hp.getArray()[j] = temp;
     }
 
 
 
-
-//Prints Array into String
+    //Prints Array into String
     public String printArray(int[] A){
         return Arrays.toString(A);
     }
