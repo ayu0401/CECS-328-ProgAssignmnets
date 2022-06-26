@@ -1,10 +1,10 @@
-<<<<<<< Updated upstream
+
 import java.util.Arrays;
-=======
+
 //Aaron Yu, 018153614
 //Jacob Munoz, 018192133
 import java.util.*;
->>>>>>> Stashed changes
+
 public class Heap {
 
     private int[] array;
@@ -41,10 +41,10 @@ public class Heap {
             array[i] = array[largest];
             array[largest] = swap;
 
-<<<<<<< Updated upstream
+
             heapify(array, heapSize, largest);
         }
-=======
+
         if (l <= )
     }
 
@@ -53,7 +53,7 @@ public class Heap {
 //        heapSize += 1;
 //        A[heapSize - 1] = num;
 //        heapify(A, num - 1);
->>>>>>> Stashed changes
+
 
         num += 1;
         A[num - 1] = key;
@@ -61,21 +61,22 @@ public class Heap {
         return num;
     }
 
-<<<<<<< Updated upstream
-    public static int insert(int[] A, int heapSize, int key){
+
+    public static int insert(int[] A, int heapSize, int key) {
 
         heapSize += 1;
         A[heapSize - 1] = key;
         heapify(A, heapSize, heapSize - 1);
         return heapSize;
-=======
-    public static int pop(int[] A, int num ){
-        int lastElement = A[num - 1];
-        A[0] = lastElement;
-        num -= 1;
-        heapify(A,num);
-        return num;
->>>>>>> Stashed changes
+
+        public static int pop ( int[] A, int num ){
+            int lastElement = A[num - 1];
+            A[0] = lastElement;
+            num -= 1;
+            heapify(A, num);
+            return num;
+
+        }
     }
 
     public static int pop(int[] A, int num){
